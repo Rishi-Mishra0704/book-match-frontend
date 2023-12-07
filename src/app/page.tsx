@@ -1,12 +1,9 @@
-import FetchBook from "./components/FetchBook";
-import Form from "./components/Form";
+import FetchBook from "@/components/FetchBook";
 
 export default function Home() {
   return (
     <div>
-      <Form />
-
       <FetchBook />
     </div>
-  )
+  );
 }

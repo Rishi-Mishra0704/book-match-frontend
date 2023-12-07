@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import axios from 'axios';
-import ShowBooks from './ShowBooks'; // Import ShowBooks component
+import ShowBooks from './ShowBooks';
 
 interface Book {
   id: number;
