@@ -2,13 +2,6 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-interface Student {
-  id: number;
-  name: string;
-  fiction_score: number;
-  non_fiction_score: number;
-}
-
 const AddStudent: React.FC = () => {
   const [studentName, setStudentName] = useState<string>("");
   const [fictionScore, setFictionScore] = useState<number>(0);
