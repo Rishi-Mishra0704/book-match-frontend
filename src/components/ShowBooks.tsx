@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React from "react";
 
 interface Book {
   id: number;
@@ -15,13 +15,12 @@ interface ShowBooksProps {
 
 const ShowBooks: React.FC<ShowBooksProps> = ({ books }) => {
   return (
-    <div>
-      {/* Display matchingBooks here */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {books.map((book) => (
-        <div key={book.id}>
-          <h3>{book.title}</h3>
-          <p>{book.author}</p>
-          <p>Fiction Score: {book.fiction_score}</p>
+        <div key={book.id} className="bg-white p-4 rounded-md shadow-md">
+          <h3 className="text-lg font-semibold mb-2">{book.title}</h3>
+          <p className="text-gray-600 mb-2">{book.author}</p>
+          <p className="mb-2">Fiction Score: {book.fiction_score}</p>
           <p>Non-Fiction Score: {book.non_fiction_score}</p>
         </div>
       ))}
