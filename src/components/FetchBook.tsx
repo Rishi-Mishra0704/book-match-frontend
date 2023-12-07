@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import ShowBooks from './ShowBooks';
+import exp from 'constants';
 
 interface Book {
   id: number;
@@ -11,10 +12,13 @@ interface Book {
   non_fiction_score: number;
 }
 
-const FetchBook: React.FC = () => {
+interface FetchBookProps {
+  onFetchBooks: (books: Book[]) => void;
+}
+
+const FetchBook: React.FC<FetchBookProps> = ({onFetchBooks}) => {
   const [fictionScore, setFictionScore] = useState<number>(0);
   const [nonFictionScore, setNonFictionScore] = useState<number>(0);
-  const [matchingBooks, setMatchingBooks] = useState<Book[]>([]);
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +29,7 @@ const FetchBook: React.FC = () => {
         non_fiction_score: nonFictionScore,
       });
 
-      setMatchingBooks(response.data);
+      onFetchBooks(response.data);
     } catch (error) {
       console.error('Error:', error);
     }
@@ -43,8 +47,6 @@ const FetchBook: React.FC = () => {
         <button type="submit">Fetch Books</button>
       </form>
 
-      {/* Use the ShowBooks component to display the fetched books */}
-      <ShowBooks books={matchingBooks} />
     </div>
   );
 };
