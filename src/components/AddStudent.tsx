@@ -26,29 +26,50 @@ const AddStudent: React.FC = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleFormSubmit}>
-        <label>Student Name:</label>
-        <input
-          type="text"
-          value={studentName}
-          onChange={(e) => setStudentName(e.target.value)}
-        />
-        <label>Fiction Score:</label>
-        <input
-          type="number"
-          value={fictionScore}
-          onChange={(e) => setFictionScore(Number(e.target.value))}
-        />
+    <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-md shadow-md">
+      <form onSubmit={handleFormSubmit} className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Student Name:
+          </label>
+          <input
+            type="text"
+            value={studentName}
+            onChange={(e) => setStudentName(e.target.value)}
+            className="mt-1 p-2 block w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+          />
+        </div>
 
-        <label>Non-Fiction Score:</label>
-        <input
-          type="number"
-          value={nonFictionScore}
-          onChange={(e) => setNonFictionScore(Number(e.target.value))}
-        />
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Fiction Score:
+          </label>
+          <input
+            type="number"
+            value={fictionScore}
+            onChange={(e) => setFictionScore(Number(e.target.value))}
+            className="mt-1 p-2 block w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+          />
+        </div>
 
-        <button type="submit">Add Student</button>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Non-Fiction Score:
+          </label>
+          <input
+            type="number"
+            value={nonFictionScore}
+            onChange={(e) => setNonFictionScore(Number(e.target.value))}
+            className="mt-1 p-2 block w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="w-full p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+        >
+          Add Student
+        </button>
       </form>
     </div>
   );
