@@ -1,36 +1,168 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<a name="readme-top"></a>
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+  <h3><b>Book Matcher</b></h3>
+
+</div>
+
+<!-- TABLE OF CONTENTS -->
+
+# 📗 Table of Contents
+
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Run tests](#run-tests)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
+
+# 📖 [Book_Matcher] <a name="about-project"></a>
+
+> Book Matcher is an innovative web application designed to provide personalized book recommendations based on individual personalities. Using advanced algorithms, it analyzes user responses to carefully crafted questions and suggests literature genres and specific books tailored to each user's unique preferences.
+
+**[Book_Matcher]**
+
+## 🛠 Built With <a name="built-with"></a>
+
+### Tech Stack <a name="tech-stack"></a>
+
+<details>
+<summary>Client</summary>
+<ul>
+<li>Next.js</li>
+<li>Tailwind CSS</li>
+<li>TypeScript</li>
+</ul>
+</details>
+<details>
+<summary>Server</summary>
+<ul>
+<li>Django</li>
+<li>Django Rest Framework</li>
+</ul>
+</details>
+<details>
+<summary>Database</summary>
+<ul>
+<li>PostgreSQL</li>
+</ul>
+</details>
+### Key Features <a name="key-features"></a>
+
+<ul>
+<li>Login page</li>
+<li>Add Students</li>
+<li>Find Books</li>
+
+
+</ul>
+<h1>Before continuiing with the project please watch the video</h1>
+
+<h3>Video presentation</h3>
+<a href="https://drive.google.com/file/d/1bs84yFmiVkm-vmsStWG0C9HwRdqGXVRi/view?usp=sharing">Click here</a>
+<h3>🚀 Live Demo</h3>
+<a href="https://book-match-frontend.vercel.app/">Live Demo</a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+<ul>
+<li>Node.js</li>
+<li>NPM</li>
+<li>Internet</li>
+
+
+</ul>
+
+### Setup
+
+Clone this repository to your desired folder:
+Use Terminal:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cd my-folder
+```
+```bash
+git clone https://github.com/Rishi-Mishra0704/book-match-frontend
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Install this project with:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+cd 'project name'
 
-## Learn More
+### Install dependencies
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm i
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Run Server
+```bash
+npm run dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## <a> 👤 Rishi Mishra </a>
+
+- GitHub: [Rishi Mishra](https://github.com/Rishi-Mishra0704)
+- Twitter: [Rishi Mishra](https://twitter.com/RishiMi31357764)
+- LinkedIn: [Rishi Mishra](https://www.linkedin.com/in/rrmishra/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+<ul>
+  <li>Add better Navigation</li>
+  <li>Better UX</li>
+</ul>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Rishi-Mishra0704/book-cms-frontend/issues)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## ⭐️ Show your support <a name="support"></a>
+
+Please give a ⭐️ if you like this project
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank Reach Best for giving me this opportunity to work on this project.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
