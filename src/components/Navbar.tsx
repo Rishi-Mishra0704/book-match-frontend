@@ -39,7 +39,7 @@ const Navbar = () => {
           )}
           {pathname === "/" ? (
             <Link
-              href="/login"
+              href="/students"
               className="text-white text-lg hover:text-gray-500"
             >
               Login
@@ -81,7 +81,7 @@ const Navbar = () => {
                 </Link>
               )}
               {pathname === "/" ? (
-                <Link href="/login" className="text-white text-3xl my-4">
+                <Link href="/students" className="text-white text-3xl my-4">
                   Login
                 </Link>
               ) : (
