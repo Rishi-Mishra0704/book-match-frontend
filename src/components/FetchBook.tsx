@@ -1,8 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import ShowBooks from "./ShowBooks";
-import exp from "constants";
 
 interface Book {
   id: number;
@@ -20,17 +18,35 @@ const FetchBook: React.FC<FetchBookProps> = ({ onFetchBooks }) => {
   const [fictionScore, setFictionScore] = useState<number>(0);
   const [nonFictionScore, setNonFictionScore] = useState<number>(0);
 
+  useEffect(() => {
+    // Fetch student_id from local storage
+    const storedData = localStorage.getItem("student_data");
+    const parsedData = storedData ? JSON.parse(storedData) : null;
+
+    if (parsedData && parsedData.student_id) {
+      // Set initial values if student_id is found
+      setFictionScore(parsedData.fiction_score);
+      setNonFictionScore(parsedData.non_fiction_score);
+    }
+  }, []);
+
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
+      // Fetch student_id from local storage
+      const storedData = localStorage.getItem("student_data");
+      const parsedData = storedData ? JSON.parse(storedData) : null;
+
       const response = await axios.post(
         "http://127.0.0.1:8000/api/student/matching_books/",
         {
+          student_id: parsedData ? parsedData.student_id : null,
           fiction_score: fictionScore,
           non_fiction_score: nonFictionScore,
         }
       );
+      console.log(response.data);
 
       onFetchBooks(response.data);
     } catch (error) {
