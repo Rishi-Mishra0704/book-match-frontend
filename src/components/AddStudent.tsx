@@ -2,18 +2,26 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+import { useRouter } from "next/navigation";
+
 const AddStudent: React.FC = () => {
   const [studentName, setStudentName] = useState<string>("");
   const [fictionScore, setFictionScore] = useState<number>(0);
   const [nonFictionScore, setNonFictionScore] = useState<number>(0);
+
+  const router = useRouter();
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
       // Check if the student exists by making a GET request
-      const studentCheckResponse = await axios.get("http://127.0.0.1:8000/api/students/");
-      const existingStudent = studentCheckResponse.data.find((student: any) => student.name === studentName);
+      const studentCheckResponse = await axios.get(
+        "http://127.0.0.1:8000/api/students/"
+      );
+      const existingStudent = studentCheckResponse.data.find(
+        (student: any) => student.name === studentName
+      );
 
       if (existingStudent) {
         // If the student exists, save the data in local storage
@@ -27,11 +35,14 @@ const AddStudent: React.FC = () => {
         localStorage.setItem("student_data", JSON.stringify(localData));
       } else {
         // If the student is not found, create a new student using the provided endpoint
-        const createStudentResponse = await axios.post("http://127.0.0.1:8000/api/student/create/", {
-          name: studentName,
-          fiction_score: fictionScore,
-          non_fiction_score: nonFictionScore,
-        });
+        const createStudentResponse = await axios.post(
+          "http://127.0.0.1:8000/api/student/create/",
+          {
+            name: studentName,
+            fiction_score: fictionScore,
+            non_fiction_score: nonFictionScore,
+          }
+        );
 
         // Extract the created student's ID from the response
         const newStudentId = createStudentResponse.data.id;
@@ -49,6 +60,7 @@ const AddStudent: React.FC = () => {
     } catch (error) {
       console.error("Error:", error);
     }
+    router.push("/books");
   };
 
   return (
