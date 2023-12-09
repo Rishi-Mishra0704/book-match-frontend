@@ -17,7 +17,7 @@ const AddStudent: React.FC = () => {
     try {
       // Check if the student exists by making a GET request
       const studentCheckResponse = await axios.get(
-        "http://127.0.0.1:8000/api/students/"
+        "https://book-match-backend-rishi-mishra0704.vercel.app/api/students/"
       );
       const existingStudent = studentCheckResponse.data.find(
         (student: any) => student.name === studentName
@@ -36,7 +36,7 @@ const AddStudent: React.FC = () => {
       } else {
         // If the student is not found, create a new student using the provided endpoint
         const createStudentResponse = await axios.post(
-          "http://127.0.0.1:8000/api/student/create/",
+          "https://book-match-backend-rishi-mishra0704.vercel.app/api/student/create/",
           {
             name: studentName,
             fiction_score: fictionScore,

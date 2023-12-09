@@ -39,7 +39,7 @@ const FetchBook: React.FC<FetchBookProps> = ({ onFetchBooks }) => {
       const parsedData = storedData ? JSON.parse(storedData) : null;
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/student/matching_books/",
+        "https://book-match-backend-rishi-mishra0704.vercel.app/api/student/matching_books/",
         {
           student_id: parsedData ? parsedData.student_id : null,
           fiction_score: fictionScore,
