@@ -46,7 +46,6 @@ const FetchBook: React.FC<FetchBookProps> = ({ onFetchBooks }) => {
           non_fiction_score: nonFictionScore,
         }
       );
-      console.log(response.data);
 
       onFetchBooks(response.data);
     } catch (error) {
@@ -63,7 +62,7 @@ const FetchBook: React.FC<FetchBookProps> = ({ onFetchBooks }) => {
           </label>
           <input
             type="number"
-            value={fictionScore}
+            placeholder="Enter Fiction Score"
             onChange={(e) => setFictionScore(Number(e.target.value))}
             className="mt-1 p-2 block w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
           />
@@ -75,7 +74,7 @@ const FetchBook: React.FC<FetchBookProps> = ({ onFetchBooks }) => {
           </label>
           <input
             type="number"
-            value={nonFictionScore}
+            placeholder="Enter Non-Fiction Score"
             onChange={(e) => setNonFictionScore(Number(e.target.value))}
             className="mt-1 p-2 block w-full border rounded-md focus:outline-none focus:ring focus:border-blue-300"
           />
