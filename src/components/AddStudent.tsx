@@ -11,15 +11,41 @@ const AddStudent: React.FC = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/api/student/create/",
-        {
+      // Check if the student exists by making a GET request
+      const studentCheckResponse = await axios.get("http://127.0.0.1:8000/api/students/");
+      const existingStudent = studentCheckResponse.data.find((student: any) => student.name === studentName);
+
+      if (existingStudent) {
+        // If the student exists, save the data in local storage
+        const localData = {
+          student_id: existingStudent.id,
+          fiction_score: fictionScore,
+          non_fiction_score: nonFictionScore,
+        };
+
+        // Save data in local storage (this depends on your specific implementation)
+        localStorage.setItem("student_data", JSON.stringify(localData));
+      } else {
+        // If the student is not found, create a new student using the provided endpoint
+        const createStudentResponse = await axios.post("http://127.0.0.1:8000/api/student/create/", {
           name: studentName,
           fiction_score: fictionScore,
           non_fiction_score: nonFictionScore,
-        }
-      );
-      return response;
+        });
+
+        // Extract the created student's ID from the response
+        const newStudentId = createStudentResponse.data.id;
+
+        // Save the data in local storage for the newly created student
+        const localData = {
+          student_id: newStudentId,
+          fiction_score: fictionScore,
+          non_fiction_score: nonFictionScore,
+        };
+
+        // Save data in local storage (this depends on your specific implementation)
+        localStorage.setItem("student_data", JSON.stringify(localData));
+      }
     } catch (error) {
       console.error("Error:", error);
     }
